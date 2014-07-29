@@ -2,16 +2,22 @@ package com.example.blunobasicdemo;
 
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
-import android.content.DialogInterface;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattCallback;
+import android.content.*;
 import android.media.AudioManager;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.content.Intent;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 
-public class MainActivity  extends BlunoLibrary {
+public class MainActivity extends BlunoLibrary {
 	private Button buttonScan;
     private Button buttonProtectUSBKey;
     private Button buttonDecrypt;
@@ -82,17 +88,35 @@ public class MainActivity  extends BlunoLibrary {
                     alert.show();
                 }
             }
+
+
         });
 
-       buttonProtectUSBKey = (Button) findViewById(R.id.btnprotectusbkey);
+       /*buttonProtectUSBKey = (Button) findViewById(R.id.btnprotectusbkey);
        buttonProtectUSBKey.setOnClickListener(new OnClickListener() {
            @Override
            public void onClick(View v) {
                 startPassiveProtectionScan();
            }
-       });
-
+       });*/
 	}
+
+    // George
+    public void onProtectToggleClicked(View view) {
+
+        // Is the toggle on?
+        boolean on = ((ToggleButton) view).isChecked();
+        if (on) {
+            // Enable vibrate
+            startPassiveProtectionScan();
+            System.out.println("Toggle On");
+        } else {
+            // Disable vibrate
+            stopPassiveProtectionScan();
+            System.out.println("Toggle Off");
+        }
+
+    }
 
 	protected void onResume(){
 		super.onResume();
@@ -130,12 +154,15 @@ public class MainActivity  extends BlunoLibrary {
 		switch (theConnectionState) {											//Four connection state
 		case isConnected:
 			buttonScan.setText("Connected");
+            rssi_indicator.setText("You are now connected to your USB Key.");
 			break;
 		case isConnecting:
 			buttonScan.setText("Connecting");
 			break;
 		case isToScan:
 			buttonScan.setText("Scan");
+
+            rssi_indicator.setText("00 - Your USB Key is not protected");
 			break;
 		case isScanning:
 			buttonScan.setText("Scanning");
@@ -164,14 +191,14 @@ public class MainActivity  extends BlunoLibrary {
             // Enable vibrate
             AudioManager aManager=(AudioManager)getSystemService(AUDIO_SERVICE);
             aManager.setRingerMode(aManager.RINGER_MODE_NORMAL);
-            silenced = 0;
-            Log.d("George_debug", "Toggle On");
+            silenced = 1;
+            Log.d("George_debug", "Toggle On - Notification Off");
         } else {
             // Disable vibrate
             AudioManager aManager=(AudioManager)getSystemService(AUDIO_SERVICE);
             aManager.setRingerMode(aManager.RINGER_MODE_SILENT);
-            silenced = 1;
-            Log.d("George_debug","Toggle Off");
+            silenced = 0;
+            Log.d("George_debug","Toggle Off - Notification On");
         }
 
     }

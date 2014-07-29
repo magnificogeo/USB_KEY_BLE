@@ -17,16 +17,18 @@
             android:shadowColor="#ff8452" android:layout_marginTop="12dp" android:textColor="#ececec"
             android:textStyle="bold"/>
 
-    <Button
+    <ToggleButton
             android:id="@+id/btnprotectusbkey"
             android:layout_width="285dp"
             android:layout_height="50dp"
-            android:text="Protect USB Key"
-            android:enabled="true"
-            android:singleLine="false" android:background="@drawable/blue_button" android:clickable="false" android:typeface="sans"
+            android:background="@drawable/blue_button"
             android:layout_gravity="center_horizontal"
             android:shadowColor="#ff8452" android:layout_marginTop="12dp" android:textColor="#ececec"
             android:textStyle="bold"
+            android:textOff="Protect USB Key"
+            android:textOn="Turn off USB Key Protection"
+            android:onClick="onProtectToggleClicked"
+            android:textSize="15dp"
             />
 
     <Button
@@ -58,8 +60,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="Notifications On"
-            android:textOff="Notifications Off"
+            android:textOn="Notifications Off"
+            android:textOff="Notifications On"
             android:onClick="onToggleClicked"/>
 
     <TextView

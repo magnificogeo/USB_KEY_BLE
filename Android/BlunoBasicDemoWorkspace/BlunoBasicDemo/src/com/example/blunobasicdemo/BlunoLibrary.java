@@ -3,6 +3,10 @@ package com.example.blunobasicdemo;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Vibrator;
 import com.example.blunobasicdemo.R;
 
 import android.os.Handler;
@@ -52,7 +56,7 @@ public abstract  class BlunoLibrary  extends Activity{
         }
     }
 
-    // Passive Device scan callback.
+    // George -Passive Device scan callback.
     private BluetoothAdapter.LeScanCallback passiveLeScanCallback = new BluetoothAdapter.LeScanCallback() {
 
         @Override
@@ -67,10 +71,23 @@ public abstract  class BlunoLibrary  extends Activity{
                         @Override
                         public void run() {
                             TextView rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
-                            rssi_indicator.setText(-rssi + " - Your USB Key is currently protected");
+                            rssi_indicator.setText("Your USB Key is currently protected");
+                            /*Toast.makeText(mainContext, "RSSI: " + -rssi,
+                                    Toast.LENGTH_SHORT).show();*/
+
+
+                            if ( -rssi > 90 ) {
+                                Toast.makeText(mainContext, "USB Key is out of range!",
+                                        Toast.LENGTH_SHORT).show();
+                                startPassiveProtectionScan();
+                            }
                         }
                     });
 
+            } else {
+                Toast.makeText(mainContext, "Restarting Scan!",
+                        Toast.LENGTH_SHORT).show();
+                startPassiveProtectionScan();
             }
 
 
@@ -84,6 +101,18 @@ public abstract  class BlunoLibrary  extends Activity{
             });*/
         }
     };
+
+    // George
+    public void stopPassiveProtectionScan() {
+        mBluetoothAdapter.stopLeScan(passiveLeScanCallback);
+        ((Activity) mainContext).runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                TextView rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
+                rssi_indicator.setText("00 - Your USB Key is not protected");
+            }
+        });
+    }
 
 	public abstract void onConectionStateChange(connectionStateEnum theconnectionStateEnum);
 	public abstract void onSerialReceived(String theString);
@@ -407,7 +436,7 @@ public abstract  class BlunoLibrary  extends Activity{
 			break;
 
 		case isConnecting:
-			
+
 			break;
 		case isConnected:
 			mBluetoothLeService.disconnect();
@@ -416,6 +445,7 @@ public abstract  class BlunoLibrary  extends Activity{
 //			mBluetoothLeService.close();
 			mConnectionState=connectionStateEnum.isDisconnecting;
 			onConectionStateChange(mConnectionState);
+
 			break;
 		case isDisconnecting:
 			

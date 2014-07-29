@@ -34,6 +34,8 @@ import android.util.Log;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 /**
@@ -91,7 +93,7 @@ public class BluetoothLeService extends Service {
     // connection change and services discovered.
     private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
         @Override
-        public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
+        public void onConnectionStateChange(final BluetoothGatt gatt, int status, int newState) {
             String intentAction;
             System.out.println("BluetoothGattCallback----onConnectionStateChange"+newState);
             if (newState == BluetoothProfile.STATE_CONNECTED) {
