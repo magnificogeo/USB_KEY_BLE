@@ -1,5 +1,7 @@
 package com.example.blunobasicdemo;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity  extends BlunoLibrary {
 	private Button buttonScan;
@@ -27,7 +30,7 @@ public class MainActivity  extends BlunoLibrary {
         serialReceivedText=(TextView) findViewById(R.id.serialReveicedText);	//initial the EditText of the received data
         serialSendText=(EditText) findViewById(R.id.serialSendText);			//initial the EditText of the sending data
         
-        buttonSerialSend = (Button) findViewById(R.id.buttonSerialSend);		//initial the button for sending the data
+        /*buttonSerialSend = (Button) findViewById(R.id.buttonSerialSend);		//initial the button for sending the data
         buttonSerialSend.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -36,7 +39,7 @@ public class MainActivity  extends BlunoLibrary {
 
 				serialSend(serialSendText.getText().toString());				//send the data to the BLUNO
 			}
-		});
+		}); */
         
         buttonScan = (Button) findViewById(R.id.buttonScan);					//initial the button for scanning the BLE device
         buttonScan.setOnClickListener(new OnClickListener() {
@@ -48,6 +51,45 @@ public class MainActivity  extends BlunoLibrary {
 				buttonScanOnClickProcess();										//Alert Dialog for selecting the BLE device
 			}
 		});
+
+        buttonDecrypt = (Button) findViewById(R.id.buttonDecrypt);
+        buttonDecrypt.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+
+                if (mConnectionState != connectionStateEnum.isConnected) {
+                    Toast.makeText(MainActivity.this, "Please connect to a USB Key first",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+
+                    alert.setTitle("Input your passkey to decrypt");
+                    //alert.setMessage("Message");
+                    // Set an EditText view to get user input
+                    final EditText passwordText = new EditText(MainActivity.this);
+                    alert.setView(passwordText);
+                    alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+
+                            try {
+                                serialSend(passwordText.getText().toString());
+                            } catch (Exception io) {
+                                //
+                            }
+                        }
+                    });
+
+                    alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            // Canceled.
+                        }
+                    });
+                    alert.show();
+                }
+            }
+        });
 	}
 
 	protected void onResume(){
