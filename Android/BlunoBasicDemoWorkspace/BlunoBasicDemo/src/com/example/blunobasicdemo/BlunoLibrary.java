@@ -40,7 +40,51 @@ public abstract  class BlunoLibrary  extends Activity{
 //		
 //		mainContext=theContext;
 //	}
-	
+
+
+    // George
+    public void startPassiveProtectionScan() {
+        if (mConnectionState != connectionStateEnum.isConnected) {
+            mBluetoothAdapter.startLeScan(passiveLeScanCallback);
+        } else {
+            Toast.makeText(getApplicationContext(), "Your USB Key is already connected and protected",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Passive Device scan callback.
+    private BluetoothAdapter.LeScanCallback passiveLeScanCallback = new BluetoothAdapter.LeScanCallback() {
+
+        @Override
+        public void onLeScan(final BluetoothDevice device, final int rssi,
+                             byte[] scanRecord) {
+
+            // George
+
+            if (device.toString().equals(BlunoNanoMacAddr)) {
+
+                    ((Activity) mainContext).runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            TextView rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
+                            rssi_indicator.setText(-rssi + " - Your USB Key is currently protected");
+                        }
+                    });
+
+            }
+
+
+           /* ((Activity) mainContext).runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("mLeScanCallback onLeScan run ");
+                    //mLeDeviceListAdapter.addDevice(device);
+                    //mLeDeviceListAdapter.notifyDataSetChanged();
+                }
+            });*/
+        }
+    };
+
 	public abstract void onConectionStateChange(connectionStateEnum theconnectionStateEnum);
 	public abstract void onSerialReceived(String theString);
 	public void serialSend(String theString){

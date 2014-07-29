@@ -1,23 +1,25 @@
 package com.example.blunobasicdemo;
 
 import android.app.AlertDialog;
+import android.bluetooth.BluetoothAdapter;
 import android.content.DialogInterface;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 
 public class MainActivity  extends BlunoLibrary {
 	private Button buttonScan;
-	private Button buttonSerialSend;
+    private Button buttonProtectUSBKey;
     private Button buttonDecrypt;
 
-	private EditText serialSendText;
 	private TextView serialReceivedText;
+    private TextView rssi_indicator;
+
+    static int silenced = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,19 +30,10 @@ public class MainActivity  extends BlunoLibrary {
         serialBegin(115200);													//set the Uart Baudrate on BLE chip to 115200
 		
         serialReceivedText=(TextView) findViewById(R.id.serialReveicedText);	//initial the EditText of the received data
-        serialSendText=(EditText) findViewById(R.id.serialSendText);			//initial the EditText of the sending data
-        
-        /*buttonSerialSend = (Button) findViewById(R.id.buttonSerialSend);		//initial the button for sending the data
-        buttonSerialSend.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
+        rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
+        rssi_indicator.setText("00 - Your USB Key is not protected");
 
-				serialSend(serialSendText.getText().toString());				//send the data to the BLUNO
-			}
-		}); */
-        
+
         buttonScan = (Button) findViewById(R.id.buttonScan);					//initial the button for scanning the BLE device
         buttonScan.setOnClickListener(new OnClickListener() {
 			
@@ -90,6 +83,15 @@ public class MainActivity  extends BlunoLibrary {
                 }
             }
         });
+
+       buttonProtectUSBKey = (Button) findViewById(R.id.btnprotectusbkey);
+       buttonProtectUSBKey.setOnClickListener(new OnClickListener() {
+           @Override
+           public void onClick(View v) {
+                startPassiveProtectionScan();
+           }
+       });
+
 	}
 
 	protected void onResume(){
@@ -153,5 +155,25 @@ public class MainActivity  extends BlunoLibrary {
 		//The Serial data from the BLUNO may be sub-packaged, so using a buffer to hold the String is a good choice.
 					
 	}
+
+    public void onToggleClicked(View view) {
+
+        // Is the toggle on?
+        boolean on = ((ToggleButton) view).isChecked();
+        if (on) {
+            // Enable vibrate
+            AudioManager aManager=(AudioManager)getSystemService(AUDIO_SERVICE);
+            aManager.setRingerMode(aManager.RINGER_MODE_NORMAL);
+            silenced = 0;
+            Log.d("George_debug", "Toggle On");
+        } else {
+            // Disable vibrate
+            AudioManager aManager=(AudioManager)getSystemService(AUDIO_SERVICE);
+            aManager.setRingerMode(aManager.RINGER_MODE_SILENT);
+            silenced = 1;
+            Log.d("George_debug","Toggle Off");
+        }
+
+    }
 
 }
