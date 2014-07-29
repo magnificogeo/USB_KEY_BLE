@@ -11,6 +11,8 @@ import android.widget.TextView;
 public class MainActivity  extends BlunoLibrary {
 	private Button buttonScan;
 	private Button buttonSerialSend;
+    private Button buttonDecrypt;
+
 	private EditText serialSendText;
 	private TextView serialReceivedText;
 	

@@ -55,6 +55,9 @@ public abstract  class BlunoLibrary  extends Activity{
 	
 	
 	private String mBaudrateBuffer = "AT+CURRUART="+mBaudrate+"\r\n";
+
+    // George
+    private String BlunoNanoMacAddr = "D0:39:72:A0:47:7E";
 	
 //	byte[] mBaudrateBuffer={0x32,0x00,(byte) (mBaudrate & 0xFF),(byte) ((mBaudrate>>8) & 0xFF),(byte) ((mBaudrate>>16) & 0xFF),0x00};;
 	
@@ -130,8 +133,8 @@ public abstract  class BlunoLibrary  extends Activity{
 		mLeDeviceListAdapter = new LeDeviceListAdapter();
 		// Initializes and show the scan Device Dialog
 		mScanDeviceDialog = new AlertDialog.Builder(mainContext)
-		.setTitle("BLE Device Scan...").setAdapter(mLeDeviceListAdapter, new DialogInterface.OnClickListener() {
-			
+		.setTitle("Select your USB Key").setAdapter(mLeDeviceListAdapter, new DialogInterface.OnClickListener() {
+
 			@Override
 			public void onClick(DialogInterface dialog, int which)
 			{
@@ -433,6 +436,14 @@ public abstract  class BlunoLibrary  extends Activity{
 		@Override
 		public void onLeScan(final BluetoothDevice device, int rssi,
 				byte[] scanRecord) {
+
+            // George
+
+            if (device.toString().equals(BlunoNanoMacAddr)) {
+
+            }
+
+
 			((Activity) mainContext).runOnUiThread(new Runnable() {
 				@Override
 				public void run() {

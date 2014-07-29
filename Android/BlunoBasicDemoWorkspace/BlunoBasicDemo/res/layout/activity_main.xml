@@ -1,13 +1,65 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#fff4e7b9"
+        >
 
+    <!-- Old Styles -->
+    <Button
+            android:id="@+id/buttonScan"
+            android:layout_width="285dp"
+            android:layout_height="50dp"
+            android:text="Connect to USB Key"
+            android:layout_alignLeft="@+id/serialSendText"
+            android:enabled="true"
+            android:singleLine="false" android:background="@drawable/red_button" android:clickable="false" android:typeface="sans"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="#ff8452" android:layout_marginTop="12dp" android:textColor="#ececec"
+            android:textStyle="bold"/>
+
+    <Button
+            android:id="@+id/btnfindusbkey"
+            android:layout_width="285dp"
+            android:layout_height="50dp"
+            android:text="Find USB Key"
+            android:enabled="true"
+            android:singleLine="false" android:background="@drawable/blue_button" android:clickable="false" android:typeface="sans"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="#ff8452" android:layout_marginTop="12dp" android:textColor="#ececec"
+            android:textStyle="bold"
+            />
+
+    <Button
+            android:id="@+id/btnDecrypt"
+            android:layout_width="285dp"
+            android:layout_height="50dp"
+            android:text="Decrypt Drive"
+            android:enabled="false"
+            android:singleLine="false" android:background="@drawable/green_button" android:clickable="false" android:typeface="sans"
+            android:layout_gravity="center_horizontal"
+            android:shadowColor="#ff8452" android:layout_marginTop="12dp" android:textColor="#ececec"
+            android:textStyle="bold"
+            />
+
+    <ToggleButton
+            android:id="@+id/togglebutton"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="Notifications On"
+            android:textOff="Notifications Off"
+            android:onClick="onToggleClicked"/>
+
+    <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/lockStatusView" android:layout_gravity="center_horizontal" android:layout_marginTop="50dp"
+            android:background="@drawable/lock" android:baselineAlignBottom="true"/>
+
+
+
+    <!-- New Styles -->
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -65,4 +117,4 @@
         android:layout_alignParentTop="true"
         android:text="Scan" />
 
-</RelativeLayout>
+</LinearLayout>
