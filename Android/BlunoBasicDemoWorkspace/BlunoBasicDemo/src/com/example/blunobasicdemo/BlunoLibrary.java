@@ -6,7 +6,7 @@ import java.util.List;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Vibrator;fd
+import android.os.Vibrator;
 import com.example.blunobasicdemo.R;
 
 import android.os.Handler;
