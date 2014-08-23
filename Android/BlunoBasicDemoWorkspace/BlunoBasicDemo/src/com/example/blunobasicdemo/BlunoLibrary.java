@@ -6,7 +6,7 @@ import java.util.List;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Vibrator;
+import android.os.Vibrator;fd
 import com.example.blunobasicdemo.R;
 
 import android.os.Handler;
@@ -38,6 +38,7 @@ import android.widget.Toast;
 public abstract  class BlunoLibrary  extends Activity{
 
 	private Context mainContext=this;
+    private static final long SCAN_PERIOD = 5000;
 
 	
 //	public BlunoLibrary(Context theContext) {
@@ -45,11 +46,24 @@ public abstract  class BlunoLibrary  extends Activity{
 //		mainContext=theContext;
 //	}
 
-
     // George
     public void startPassiveProtectionScan() {
         if (mConnectionState != connectionStateEnum.isConnected) {
+
+
+               mHandler.postDelayed(new Runnable() {
+                   @Override
+                   public void run() {
+                       mScanning = false;
+                       Log.d("George_debug", "Stopping Passive Scan");
+                       stopPassiveProtectionScan();
+                       startPassiveProtectionScan();
+                   }
+               }, SCAN_PERIOD);
+
+            mScanning = true;
             mBluetoothAdapter.startLeScan(passiveLeScanCallback);
+
         } else {
             Toast.makeText(getApplicationContext(), "Your USB Key is already connected and protected",
                     Toast.LENGTH_SHORT).show();
@@ -64,32 +78,34 @@ public abstract  class BlunoLibrary  extends Activity{
                              byte[] scanRecord) {
 
             // George
-
+            Log.d("George_debug", "Passive Scan Callback - Device value is " + device);
             if (device.toString().equals(BlunoNanoMacAddr)) {
 
-                    ((Activity) mainContext).runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            TextView rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
-                            rssi_indicator.setText("Your USB Key is currently protected");
+                ((Activity) mainContext).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        TextView rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
+                        //rssi_indicator.setText("Your USB Key is currently protected");
                             /*Toast.makeText(mainContext, "RSSI: " + -rssi,
                                     Toast.LENGTH_SHORT).show();*/
 
+                        rssi_indicator.setText("RSSI: " + rssi);
 
-                            if ( -rssi > 90 ) {
-                                Toast.makeText(mainContext, "USB Key is out of range!",
-                                        Toast.LENGTH_SHORT).show();
-                                startPassiveProtectionScan();
-                            }
+
+                        if (-rssi > 80) {
+
+                            /*Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                            r.play();*/
+
+
+                            Toast.makeText(mainContext, "USB Key is out of range!",Toast.LENGTH_SHORT).show();
+
                         }
-                    });
+                    }
+                });
 
-            } else {
-                Toast.makeText(mainContext, "Restarting Scan!",
-                        Toast.LENGTH_SHORT).show();
-                startPassiveProtectionScan();
             }
-
 
            /* ((Activity) mainContext).runOnUiThread(new Runnable() {
                 @Override
@@ -105,6 +121,7 @@ public abstract  class BlunoLibrary  extends Activity{
     // George
     public void stopPassiveProtectionScan() {
         mBluetoothAdapter.stopLeScan(passiveLeScanCallback);
+        Log.d("George_debug", "Hello!");
         ((Activity) mainContext).runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -112,6 +129,8 @@ public abstract  class BlunoLibrary  extends Activity{
                 rssi_indicator.setText("00 - Your USB Key is not protected");
             }
         });
+        Log.d("George_debug","Starting Passive Protection Scan Again!");
+
     }
 
 	public abstract void onConectionStateChange(connectionStateEnum theconnectionStateEnum);
@@ -125,11 +144,8 @@ public abstract  class BlunoLibrary  extends Activity{
 	
 	private int mBaudrate=115200;	//set the default baud rate to 115200
 	private String mPassword="AT+PASSWOR=DFRobot\r\n";
-	
-	
 	private String mBaudrateBuffer = "AT+CURRUART="+mBaudrate+"\r\n";
-
-    // George
+    // George - Bluno Nano hardware MAC address
     private String BlunoNanoMacAddr = "D0:39:72:A0:47:7E";
 	
 //	byte[] mBaudrateBuffer={0x32,0x00,(byte) (mBaudrate & 0xFF),(byte) ((mBaudrate>>8) & 0xFF),(byte) ((mBaudrate>>16) & 0xFF),0x00};;
@@ -212,8 +228,10 @@ public abstract  class BlunoLibrary  extends Activity{
 			public void onClick(DialogInterface dialog, int which)
 			{
 				final BluetoothDevice device = mLeDeviceListAdapter.getDevice(which);
-				if (device == null)
-					return;
+				if (device == null) {
+
+                    return;
+                }
 				scanLeDevice(false);
 				System.out.println("onListItemClick " + device.getName().toString());
 				
@@ -221,13 +239,12 @@ public abstract  class BlunoLibrary  extends Activity{
 				
 				mDeviceName=device.getName().toString();
 				mDeviceAddress=device.getAddress().toString();
-				
-		        if(mDeviceName.equals("No Device Available") && mDeviceAddress.equals("No Address Available"))
+
+                if(mDeviceName.equals("No Device Available") && mDeviceAddress.equals("No Address Available"))
 		        {
 		        	mConnectionState=connectionStateEnum.isToScan;
 		        	onConectionStateChange(mConnectionState);
-		        }
-		        else{
+		        } else{
 		        	if (mBluetoothLeService.connect(mDeviceAddress)) {
 				        Log.d(TAG, "Connect request success");
 			        	mConnectionState=connectionStateEnum.isConnecting;
@@ -242,19 +259,19 @@ public abstract  class BlunoLibrary  extends Activity{
 		        }
 			}
 		})
-		.setOnCancelListener(new DialogInterface.OnCancelListener(){
+		.setOnCancelListener(new DialogInterface.OnCancelListener() {
 
-			@Override
-			public void onCancel(DialogInterface arg0) {
-				System.out.println("mBluetoothAdapter.stopLeScan");
+            @Override
+            public void onCancel(DialogInterface arg0) {
+                System.out.println("mBluetoothAdapter.stopLeScan");
 
-	        	mConnectionState=connectionStateEnum.isToScan;
-	        	onConectionStateChange(mConnectionState);
-				mScanDeviceDialog.dismiss();
+                mConnectionState = connectionStateEnum.isToScan;
+                onConectionStateChange(mConnectionState);
+                mScanDeviceDialog.dismiss();
 
-				scanLeDevice(false);
-			}
-		}).create();
+                scanLeDevice(false);
+            }
+        }).create();
 		
     }
     
@@ -370,7 +387,11 @@ public abstract  class BlunoLibrary  extends Activity{
                 mConnectionState = connectionStateEnum.isToScan;
                 onConectionStateChange(mConnectionState);
             	mHandler.removeCallbacks(mDisonnectingOverTimeRunnable);
-            	mBluetoothLeService.close();
+
+                // George - Disconnect Logic
+                lossLogic();
+
+                mBluetoothLeService.close();
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
             	for (BluetoothGattService gattService : mBluetoothLeService.getSupportedGattServices()) {
@@ -415,6 +436,30 @@ public abstract  class BlunoLibrary  extends Activity{
             }
         }
     };
+
+    // George - loss logic
+    void lossLogic() {
+
+
+
+        MainActivity.buttonScan.setText("Out of Range...");
+        Toast.makeText(getApplicationContext(), "Disconnected from USB Key",
+                Toast.LENGTH_SHORT).show();
+
+
+        Vibrator v = (Vibrator) mainContext.getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibrate for 500 milliseconds
+        v.vibrate(500);
+
+        //buttonScanOnClickProcess(); // activate scan again to look for it
+        lookForUSBKey();
+
+    }
+
+    // George - Look for USB Key
+    void lookForUSBKey() {
+
+    }
 	
     void buttonScanOnClickProcess()
     {
@@ -432,7 +477,7 @@ public abstract  class BlunoLibrary  extends Activity{
 			mScanDeviceDialog.show();
 			break;
 		case isScanning:
-			
+
 			break;
 
 		case isConnecting:
@@ -463,23 +508,24 @@ public abstract  class BlunoLibrary  extends Activity{
 			// Stops scanning after a pre-defined scan period.
 
 			System.out.println("mBluetoothAdapter.startLeScan");
-			
-			if(mLeDeviceListAdapter != null)
-			{
-				mLeDeviceListAdapter.clear();
-				mLeDeviceListAdapter.notifyDataSetChanged();
-			}
-			
-			if(!mScanning)
-			{
-				mScanning = true;
-				mBluetoothAdapter.startLeScan(mLeScanCallback);
-			}
+
+            if(mLeDeviceListAdapter != null)
+            {
+                mLeDeviceListAdapter.clear();
+                mLeDeviceListAdapter.notifyDataSetChanged();
+            }
+
+            if(!mScanning)
+            {
+                mScanning = true;
+                mBluetoothAdapter.startLeScan(mLeScanCallback);
+            }
 		} else {
 			if(mScanning)
 			{
 				mScanning = false;
 				mBluetoothAdapter.stopLeScan(mLeScanCallback);
+
 			}
 		}
 	}
@@ -511,12 +557,25 @@ public abstract  class BlunoLibrary  extends Activity{
 		public void onLeScan(final BluetoothDevice device, int rssi,
 				byte[] scanRecord) {
 
-            // George
-
+            // George - LOSS LOGIC
+            Log.d("George_debug","LeScanCallback - Device value is " + device);
             if (device.toString().equals(BlunoNanoMacAddr)) {
 
-            }
 
+
+            } else {
+
+                ((Activity) mainContext).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("mLeScanCallback onLeScan cannot find USB Key ");
+                        mLeDeviceListAdapter.clear();
+                        mLeDeviceListAdapter.notifyDataSetChanged();
+                    }
+                });
+                return;
+
+            }
 
 			((Activity) mainContext).runOnUiThread(new Runnable() {
 				@Override

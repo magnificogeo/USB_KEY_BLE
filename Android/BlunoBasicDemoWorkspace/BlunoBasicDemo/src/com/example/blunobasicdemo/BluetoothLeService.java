@@ -16,6 +16,7 @@
 
 package com.example.blunobasicdemo;
 
+import android.app.Activity;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -31,6 +32,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;

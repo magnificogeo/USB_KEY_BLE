@@ -18,13 +18,13 @@ import android.view.View.OnClickListener;
 import android.widget.*;
 
 public class MainActivity extends BlunoLibrary {
-	private Button buttonScan;
+
+	public static Button buttonScan;
     private Button buttonProtectUSBKey;
     private Button buttonDecrypt;
-
+    private Button btnfindusbkey;
 	private TextView serialReceivedText;
     private TextView rssi_indicator;
-
     static int silenced = 0;
 	
 	@Override
@@ -39,6 +39,18 @@ public class MainActivity extends BlunoLibrary {
         rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
         rssi_indicator.setText("00 - Your USB Key is not protected");
 
+        btnfindusbkey = (Button) findViewById(R.id.btnfindusbkey); // initial the button for finding USB Key
+        btnfindusbkey.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //TODO Auto-generated method stub
+                Intent intent = new Intent(getApplicationContext(), UsbKeySearch.class);
+                startActivity(intent);
+
+            }
+
+        });
 
         buttonScan = (Button) findViewById(R.id.buttonScan);					//initial the button for scanning the BLE device
         buttonScan.setOnClickListener(new OnClickListener() {
@@ -92,13 +104,9 @@ public class MainActivity extends BlunoLibrary {
 
         });
 
-       /*buttonProtectUSBKey = (Button) findViewById(R.id.btnprotectusbkey);
-       buttonProtectUSBKey.setOnClickListener(new OnClickListener() {
-           @Override
-           public void onClick(View v) {
-                startPassiveProtectionScan();
-           }
-       });*/
+        buttonScanOnClickProcess();
+
+
 	}
 
     // George
@@ -123,29 +131,27 @@ public class MainActivity extends BlunoLibrary {
 		System.out.println("BlUNOActivity onResume");
 		onResumeProcess();														//onResume Process by BlunoLibrary
 	}
-	
-	
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		onActivityResultProcess(requestCode, resultCode, data);					//onActivityResult Process by BlunoLibrary
 		super.onActivityResult(requestCode, resultCode, data);
 	}
-	
+
     @Override
     protected void onPause() {
         super.onPause();
         onPauseProcess();														//onPause Process by BlunoLibrary
     }
-	
+
 	protected void onStop() {
 		super.onStop();
 		onStopProcess();														//onStop Process by BlunoLibrary
 	}
-    
+
 	@Override
     protected void onDestroy() {
-        super.onDestroy();	
+        super.onDestroy();
         onDestroyProcess();														//onDestroy Process by BlunoLibrary
     }
 
@@ -161,7 +167,6 @@ public class MainActivity extends BlunoLibrary {
 			break;
 		case isToScan:
 			buttonScan.setText("Scan");
-
             rssi_indicator.setText("00 - Your USB Key is not protected");
 			break;
 		case isScanning:
@@ -180,7 +185,7 @@ public class MainActivity extends BlunoLibrary {
 		// TODO Auto-generated method stub
 		serialReceivedText.append(theString);							//append the text into the EditText
 		//The Serial data from the BLUNO may be sub-packaged, so using a buffer to hold the String is a good choice.
-					
+
 	}
 
     public void onToggleClicked(View view) {
