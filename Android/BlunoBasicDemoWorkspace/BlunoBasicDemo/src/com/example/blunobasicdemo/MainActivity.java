@@ -39,7 +39,7 @@ public class MainActivity extends BlunoLibrary {
         rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
         rssi_indicator.setText("00 - Your USB Key is not protected");
 
-        btnfindusbkey = (Button) findViewById(R.id.btnfindusbkey); // initial the button for finding USB Key
+        /*btnfindusbkey = (Button) findViewById(R.id.btnfindusbkey); // initial the button for finding USB Key
         btnfindusbkey.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -50,7 +50,7 @@ public class MainActivity extends BlunoLibrary {
 
             }
 
-        });
+        }); */
 
         buttonScan = (Button) findViewById(R.id.buttonScan);					//initial the button for scanning the BLE device
         buttonScan.setOnClickListener(new OnClickListener() {
@@ -110,21 +110,21 @@ public class MainActivity extends BlunoLibrary {
 	}
 
     // George
-    public void onProtectToggleClicked(View view) {
-
-        // Is the toggle on?
-        boolean on = ((ToggleButton) view).isChecked();
-        if (on) {
-            // Enable vibrate
-            startPassiveProtectionScan();
-            System.out.println("Toggle On");
-        } else {
-            // Disable vibrate
-            stopPassiveProtectionScan();
-            System.out.println("Toggle Off");
-        }
-
-    }
+//    public void onProtectToggleClicked(View view) {
+//
+//        // Is the toggle on?
+//        boolean on = ((ToggleButton) view).isChecked();
+//        if (on) {
+//            // Enable vibrate
+//            startPassiveProtectionScan();
+//            System.out.println("Toggle On");
+//        } else {
+//            // Disable vibrate
+//            stopPassiveProtectionScan();
+//            System.out.println("Toggle Off");
+//        }
+//
+//    }
 
 	protected void onResume(){
 		super.onResume();

@@ -17,7 +17,7 @@
             android:shadowColor="#ff8452" android:layout_marginTop="12dp" android:textColor="#ececec"
             android:textStyle="bold"/>
 
-    <ToggleButton
+   <!--  <ToggleButton
             android:id="@+id/btnprotectusbkey"
             android:layout_width="285dp"
             android:layout_height="50dp"
@@ -42,7 +42,7 @@
             android:shadowColor="#ff8452" android:layout_marginTop="12dp" android:textColor="#ececec"
             android:textStyle="bold"
             />
-
+ -->
     <Button
             android:id="@+id/buttonDecrypt"
             android:layout_width="285dp"

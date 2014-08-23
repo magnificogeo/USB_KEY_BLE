@@ -10,5 +10,5 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:id="@+id/signalStatus" android:layout_gravity="center_horizontal" android:layout_marginTop="50dp"
-            android:background="@drawable/signal_zero" android:baselineAlignBottom="true"/>
+            android:background="@drawable/disconnect" android:baselineAlignBottom="true"/>
 </LinearLayout>
