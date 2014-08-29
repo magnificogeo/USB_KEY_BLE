@@ -80,105 +80,81 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="DialogFragment.java" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/app/DialogFragment.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-1.9320499" vertical-offset="3546" max-vertical-offset="8384">
-                    <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="BlunoBasicDemo" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BlunoLibrary.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7142856" vertical-offset="564" max-vertical-offset="10192">
-              <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3410#3656#0" expanded="true" />
-                <element signature="e#3654#3655#0" expanded="true" />
-                <element signature="e#3712#3961#0" expanded="true" />
-                <element signature="e#3959#3960#0" expanded="true" />
-                <element signature="e#4322#4360#0" expanded="true" />
-                <element signature="e#4906#6254#0" expanded="true" />
-                <element signature="e#6249#6250#0" expanded="true" />
-                <element signature="e#6279#6698#0" expanded="true" />
-                <element signature="e#6687#6688#0" expanded="true" />
-                <element signature="e#9850#13000#0" expanded="true" />
-                <element signature="e#12993#12994#0" expanded="true" />
-                <element signature="e#16054#17189#0" expanded="true" />
-                <element signature="e#16453#16877#0" expanded="true" />
-                <element signature="e#16858#16859#0" expanded="true" />
-                <element signature="e#16962#17180#0" expanded="true" />
-                <element signature="e#17174#17175#0" expanded="true" />
-                <element signature="e#17185#17186#0" expanded="true" />
-                <element signature="e#18009#18038#0" expanded="true" />
-                <element signature="e#20924#20925#0" expanded="true" />
-                <element signature="e#20957#20958#0" expanded="true" />
-                <element signature="e#21920#21943#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsbKeySearchFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3188406" vertical-offset="1048" max-vertical-offset="2208">
-              <caret line="20" column="53" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1085#1307#0" expanded="true" />
-                <element signature="e#1288#1289#0" expanded="true" />
-                <element signature="e#2309#4153#0" expanded="true" />
-                <element signature="e#4146#4147#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlertDialog.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/app/AlertDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3472" max-vertical-offset="14448">
-              <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="3216">
-              <caret line="126" column="7" selection-start-line="112" selection-start-column="6" selection-end-line="126" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="3392">
+              <caret line="135" column="28" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
               <folding>
-                <element signature="e#2052#2259#0" expanded="true" />
-                <element signature="e#2254#2255#0" expanded="true" />
-                <element signature="e#2371#3921#0" expanded="true" />
-                <element signature="e#3162#3568#0" expanded="true" />
-                <element signature="e#3545#3546#0" expanded="true" />
-                <element signature="e#3626#3841#0" expanded="true" />
-                <element signature="e#3818#3819#0" expanded="true" />
-                <element signature="e#3908#3909#0" expanded="true" />
+                <element signature="e#1701#2541#0" expanded="true" />
+                <element signature="e#2529#2530#0" expanded="true" />
+                <element signature="e#2697#2904#0" expanded="true" />
+                <element signature="e#2899#2900#0" expanded="true" />
+                <element signature="e#3016#4566#0" expanded="true" />
+                <element signature="e#3807#4213#0" expanded="true" />
+                <element signature="e#4190#4191#0" expanded="true" />
+                <element signature="e#4271#4486#0" expanded="true" />
+                <element signature="e#4463#4464#0" expanded="true" />
+                <element signature="e#4553#4554#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlunoLibrary.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.60152674" vertical-offset="5606" max-vertical-offset="10400">
+              <caret line="375" column="0" selection-start-line="356" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3492#3738#0" expanded="true" />
+                <element signature="e#3736#3737#0" expanded="true" />
+                <element signature="e#3794#4043#0" expanded="true" />
+                <element signature="e#4041#4042#0" expanded="true" />
+                <element signature="e#4404#4442#0" expanded="true" />
+                <element signature="e#4988#6336#0" expanded="true" />
+                <element signature="e#6331#6332#0" expanded="true" />
+                <element signature="e#6361#6780#0" expanded="true" />
+                <element signature="e#6769#6770#0" expanded="true" />
+                <element signature="e#9927#13077#0" expanded="true" />
+                <element signature="e#13070#13071#0" expanded="true" />
+                <element signature="e#16491#17728#0" expanded="true" />
+                <element signature="e#16951#17416#0" expanded="true" />
+                <element signature="e#17397#17398#0" expanded="true" />
+                <element signature="e#17501#17719#0" expanded="true" />
+                <element signature="e#17713#17714#0" expanded="true" />
+                <element signature="e#17724#17725#0" expanded="true" />
+                <element signature="e#18548#18577#0" expanded="true" />
+                <element signature="e#21463#21464#0" expanded="true" />
+                <element signature="e#21496#21497#0" expanded="true" />
+                <element signature="e#22459#22482#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsbKeySearchFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="30.5" vertical-offset="1321" max-vertical-offset="2320">
+              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1085#1422#0" expanded="true" />
+                <element signature="e#1403#1404#0" expanded="true" />
+                <element signature="e#1452#1727#0" expanded="true" />
+                <element signature="e#1716#1717#0" expanded="true" />
+                <element signature="e#1958#2287#0" expanded="true" />
+                <element signature="e#2272#2273#0" expanded="true" />
+                <element signature="e#2726#4570#0" expanded="true" />
+                <element signature="e#4563#4564#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -190,8 +166,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.346154" vertical-offset="270" max-vertical-offset="2416">
-              <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+            <state vertical-scroll-proportion="-6.4615383" vertical-offset="352" max-vertical-offset="2400">
+              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -203,8 +179,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6923077" vertical-offset="0" max-vertical-offset="304">
-              <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+            <state vertical-scroll-proportion="-3.3846154" vertical-offset="0" max-vertical-offset="304">
+              <caret line="11" column="147" selection-start-line="11" selection-start-column="147" selection-end-line="11" selection-end-column="147" />
               <folding />
             </state>
           </provider>
@@ -226,8 +202,8 @@
       <file leaf-file-name="BluetoothLeService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BluetoothLeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-48.0" vertical-offset="1600" max-vertical-offset="8560">
-              <caret line="120" column="61" selection-start-line="120" selection-start-column="61" selection-end-line="120" selection-end-column="61" />
+            <state vertical-scroll-proportion="-7.464286" vertical-offset="6239" max-vertical-offset="8560">
+              <caret line="421" column="36" selection-start-line="421" selection-start-column="20" selection-end-line="421" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3057#3092#0" expanded="true" />
@@ -252,18 +228,19 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/BluetoothLeService.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
+        <option value="$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/app/DialogFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java" />
         <option value="$PROJECT_DIR$/res/layout/usbkeysearch_layout.xml" />
         <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java" />
-        <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1714" />
-    <option name="y" value="32" />
-    <option name="width" value="1646" />
-    <option name="height" value="1048" />
+    <option name="x" value="1788" />
+    <option name="y" value="22" />
+    <option name="width" value="1641" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -375,13 +352,14 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/android-sdk-macosx/extras/android/support/v4" />
   </component>
   <component name="RunManager" selected="Android Application.BlunoBasicDemo">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -584,7 +562,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1714" y="32" width="1646" height="1048" extended-state="0" />
+    <frame x="1788" y="22" width="1641" height="1028" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -593,6 +571,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293379" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39957264" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-187" y="540" width="1599" height="358" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35751295" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -600,20 +579,47 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32845187" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36924687" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="1949" y="599" width="1599" height="508" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2681624" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="1949" y="599" width="1599" height="508" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2468828" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20074813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32845187" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20074813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32799146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35751295" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20074813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32799146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293379" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39957264" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-187" y="540" width="1599" height="358" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32845187" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37713677" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="1949" y="599" width="1599" height="508" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2468828" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -633,7 +639,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="21" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -641,57 +647,21 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/RingBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1125">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8895">
-          <caret line="497" column="49" selection-start-line="497" selection-start-column="49" selection-end-line="497" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3410#3656#0" expanded="true" />
-            <element signature="e#3654#3655#0" expanded="true" />
-            <element signature="e#3712#3961#0" expanded="true" />
-            <element signature="e#3959#3960#0" expanded="true" />
-            <element signature="e#4322#4360#0" expanded="true" />
-            <element signature="e#4906#6254#0" expanded="true" />
-            <element signature="e#6249#6250#0" expanded="true" />
-            <element signature="e#6279#6698#0" expanded="true" />
-            <element signature="e#6687#6688#0" expanded="true" />
-            <element signature="e#9850#13000#0" expanded="true" />
-            <element signature="e#12993#12994#0" expanded="true" />
-            <element signature="e#16054#17189#0" expanded="true" />
-            <element signature="e#16453#16877#0" expanded="true" />
-            <element signature="e#16858#16859#0" expanded="true" />
-            <element signature="e#16962#17180#0" expanded="true" />
-            <element signature="e#17174#17175#0" expanded="true" />
-            <element signature="e#17185#17186#0" expanded="true" />
-            <element signature="e#18009#18038#0" expanded="true" />
-            <element signature="e#20924#20925#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#21920#21943#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="2310">
           <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
           <folding>
-            <element signature="e#2052#2259#0" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2371#3921#0" expanded="true" />
-            <element signature="e#3162#3568#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
-            <element signature="e#3626#3841#0" expanded="true" />
-            <element signature="e#3818#3819#0" expanded="true" />
-            <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#1701#2541#0" expanded="true" />
+            <element signature="e#2529#2530#0" expanded="true" />
+            <element signature="e#2697#2904#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#3016#4566#0" expanded="true" />
+            <element signature="e#3807#4213#0" expanded="true" />
+            <element signature="e#4190#4191#0" expanded="true" />
+            <element signature="e#4271#4486#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+            <element signature="e#4553#4554#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -739,27 +709,27 @@
           <caret line="183" column="20" selection-start-line="183" selection-start-column="20" selection-end-line="183" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3410#3656#0" expanded="true" />
-            <element signature="e#3654#3655#0" expanded="true" />
-            <element signature="e#3712#3961#0" expanded="true" />
-            <element signature="e#3959#3960#0" expanded="true" />
-            <element signature="e#4322#4360#0" expanded="true" />
-            <element signature="e#4906#6254#0" expanded="true" />
-            <element signature="e#6249#6250#0" expanded="true" />
-            <element signature="e#6279#6698#0" expanded="true" />
-            <element signature="e#6687#6688#0" expanded="true" />
-            <element signature="e#9850#13000#0" expanded="true" />
-            <element signature="e#12993#12994#0" expanded="true" />
-            <element signature="e#16054#17189#0" expanded="true" />
-            <element signature="e#16453#16877#0" expanded="true" />
-            <element signature="e#16858#16859#0" expanded="true" />
-            <element signature="e#16962#17180#0" expanded="true" />
-            <element signature="e#17174#17175#0" expanded="true" />
-            <element signature="e#17185#17186#0" expanded="true" />
-            <element signature="e#18009#18038#0" expanded="true" />
-            <element signature="e#20924#20925#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#21920#21943#0" expanded="true" />
+            <element signature="e#3492#3738#0" expanded="true" />
+            <element signature="e#3736#3737#0" expanded="true" />
+            <element signature="e#3794#4043#0" expanded="true" />
+            <element signature="e#4041#4042#0" expanded="true" />
+            <element signature="e#4404#4442#0" expanded="true" />
+            <element signature="e#4988#6336#0" expanded="true" />
+            <element signature="e#6331#6332#0" expanded="true" />
+            <element signature="e#6361#6780#0" expanded="true" />
+            <element signature="e#6769#6770#0" expanded="true" />
+            <element signature="e#9927#13077#0" expanded="true" />
+            <element signature="e#13070#13071#0" expanded="true" />
+            <element signature="e#16491#17728#0" expanded="true" />
+            <element signature="e#16951#17416#0" expanded="true" />
+            <element signature="e#17397#17398#0" expanded="true" />
+            <element signature="e#17501#17719#0" expanded="true" />
+            <element signature="e#17713#17714#0" expanded="true" />
+            <element signature="e#17724#17725#0" expanded="true" />
+            <element signature="e#18548#18577#0" expanded="true" />
+            <element signature="e#21463#21464#0" expanded="true" />
+            <element signature="e#21496#21497#0" expanded="true" />
+            <element signature="e#22459#22482#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -769,14 +739,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1800">
           <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
           <folding>
-            <element signature="e#2052#2259#0" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2371#3921#0" expanded="true" />
-            <element signature="e#3162#3568#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
-            <element signature="e#3626#3841#0" expanded="true" />
-            <element signature="e#3818#3819#0" expanded="true" />
-            <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#1701#2541#0" expanded="true" />
+            <element signature="e#2529#2530#0" expanded="true" />
+            <element signature="e#2697#2904#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#3016#4566#0" expanded="true" />
+            <element signature="e#3807#4213#0" expanded="true" />
+            <element signature="e#4190#4191#0" expanded="true" />
+            <element signature="e#4271#4486#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+            <element signature="e#4553#4554#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -824,27 +796,27 @@
           <caret line="183" column="20" selection-start-line="183" selection-start-column="20" selection-end-line="183" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3410#3656#0" expanded="true" />
-            <element signature="e#3654#3655#0" expanded="true" />
-            <element signature="e#3712#3961#0" expanded="true" />
-            <element signature="e#3959#3960#0" expanded="true" />
-            <element signature="e#4322#4360#0" expanded="true" />
-            <element signature="e#4906#6254#0" expanded="true" />
-            <element signature="e#6249#6250#0" expanded="true" />
-            <element signature="e#6279#6698#0" expanded="true" />
-            <element signature="e#6687#6688#0" expanded="true" />
-            <element signature="e#9850#13000#0" expanded="true" />
-            <element signature="e#12993#12994#0" expanded="true" />
-            <element signature="e#16054#17189#0" expanded="true" />
-            <element signature="e#16453#16877#0" expanded="true" />
-            <element signature="e#16858#16859#0" expanded="true" />
-            <element signature="e#16962#17180#0" expanded="true" />
-            <element signature="e#17174#17175#0" expanded="true" />
-            <element signature="e#17185#17186#0" expanded="true" />
-            <element signature="e#18009#18038#0" expanded="true" />
-            <element signature="e#20924#20925#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#21920#21943#0" expanded="true" />
+            <element signature="e#3492#3738#0" expanded="true" />
+            <element signature="e#3736#3737#0" expanded="true" />
+            <element signature="e#3794#4043#0" expanded="true" />
+            <element signature="e#4041#4042#0" expanded="true" />
+            <element signature="e#4404#4442#0" expanded="true" />
+            <element signature="e#4988#6336#0" expanded="true" />
+            <element signature="e#6331#6332#0" expanded="true" />
+            <element signature="e#6361#6780#0" expanded="true" />
+            <element signature="e#6769#6770#0" expanded="true" />
+            <element signature="e#9927#13077#0" expanded="true" />
+            <element signature="e#13070#13071#0" expanded="true" />
+            <element signature="e#16491#17728#0" expanded="true" />
+            <element signature="e#16951#17416#0" expanded="true" />
+            <element signature="e#17397#17398#0" expanded="true" />
+            <element signature="e#17501#17719#0" expanded="true" />
+            <element signature="e#17713#17714#0" expanded="true" />
+            <element signature="e#17724#17725#0" expanded="true" />
+            <element signature="e#18548#18577#0" expanded="true" />
+            <element signature="e#21463#21464#0" expanded="true" />
+            <element signature="e#21496#21497#0" expanded="true" />
+            <element signature="e#22459#22482#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -854,14 +826,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1800">
           <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
           <folding>
-            <element signature="e#2052#2259#0" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2371#3921#0" expanded="true" />
-            <element signature="e#3162#3568#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
-            <element signature="e#3626#3841#0" expanded="true" />
-            <element signature="e#3818#3819#0" expanded="true" />
-            <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#1701#2541#0" expanded="true" />
+            <element signature="e#2529#2530#0" expanded="true" />
+            <element signature="e#2697#2904#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#3016#4566#0" expanded="true" />
+            <element signature="e#3807#4213#0" expanded="true" />
+            <element signature="e#4190#4191#0" expanded="true" />
+            <element signature="e#4271#4486#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+            <element signature="e#4553#4554#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -909,27 +883,27 @@
           <caret line="183" column="20" selection-start-line="183" selection-start-column="20" selection-end-line="183" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3410#3656#0" expanded="true" />
-            <element signature="e#3654#3655#0" expanded="true" />
-            <element signature="e#3712#3961#0" expanded="true" />
-            <element signature="e#3959#3960#0" expanded="true" />
-            <element signature="e#4322#4360#0" expanded="true" />
-            <element signature="e#4906#6254#0" expanded="true" />
-            <element signature="e#6249#6250#0" expanded="true" />
-            <element signature="e#6279#6698#0" expanded="true" />
-            <element signature="e#6687#6688#0" expanded="true" />
-            <element signature="e#9850#13000#0" expanded="true" />
-            <element signature="e#12993#12994#0" expanded="true" />
-            <element signature="e#16054#17189#0" expanded="true" />
-            <element signature="e#16453#16877#0" expanded="true" />
-            <element signature="e#16858#16859#0" expanded="true" />
-            <element signature="e#16962#17180#0" expanded="true" />
-            <element signature="e#17174#17175#0" expanded="true" />
-            <element signature="e#17185#17186#0" expanded="true" />
-            <element signature="e#18009#18038#0" expanded="true" />
-            <element signature="e#20924#20925#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#21920#21943#0" expanded="true" />
+            <element signature="e#3492#3738#0" expanded="true" />
+            <element signature="e#3736#3737#0" expanded="true" />
+            <element signature="e#3794#4043#0" expanded="true" />
+            <element signature="e#4041#4042#0" expanded="true" />
+            <element signature="e#4404#4442#0" expanded="true" />
+            <element signature="e#4988#6336#0" expanded="true" />
+            <element signature="e#6331#6332#0" expanded="true" />
+            <element signature="e#6361#6780#0" expanded="true" />
+            <element signature="e#6769#6770#0" expanded="true" />
+            <element signature="e#9927#13077#0" expanded="true" />
+            <element signature="e#13070#13071#0" expanded="true" />
+            <element signature="e#16491#17728#0" expanded="true" />
+            <element signature="e#16951#17416#0" expanded="true" />
+            <element signature="e#17397#17398#0" expanded="true" />
+            <element signature="e#17501#17719#0" expanded="true" />
+            <element signature="e#17713#17714#0" expanded="true" />
+            <element signature="e#17724#17725#0" expanded="true" />
+            <element signature="e#18548#18577#0" expanded="true" />
+            <element signature="e#21463#21464#0" expanded="true" />
+            <element signature="e#21496#21497#0" expanded="true" />
+            <element signature="e#22459#22482#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -939,14 +913,16 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1800">
           <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
           <folding>
-            <element signature="e#2052#2259#0" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2371#3921#0" expanded="true" />
-            <element signature="e#3162#3568#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
-            <element signature="e#3626#3841#0" expanded="true" />
-            <element signature="e#3818#3819#0" expanded="true" />
-            <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#1701#2541#0" expanded="true" />
+            <element signature="e#2529#2530#0" expanded="true" />
+            <element signature="e#2697#2904#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#3016#4566#0" expanded="true" />
+            <element signature="e#3807#4213#0" expanded="true" />
+            <element signature="e#4190#4191#0" expanded="true" />
+            <element signature="e#4271#4486#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+            <element signature="e#4553#4554#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1092,17 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BluetoothLeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-48.0" vertical-offset="1600" max-vertical-offset="8560">
-          <caret line="120" column="61" selection-start-line="120" selection-start-column="61" selection-end-line="120" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3057#3092#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/com/example/android/rs/hellocomputendk/HelloComputeNDK.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16695653" vertical-offset="0" max-vertical-offset="752">
@@ -1127,24 +1092,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/app/Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.346154" vertical-offset="270" max-vertical-offset="2416">
-          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/usbkeysearch_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6923077" vertical-offset="0" max-vertical-offset="304">
-          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="10648" max-vertical-offset="28400">
+          <caret line="757" column="26" selection-start-line="757" selection-start-column="26" selection-end-line="757" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1160,80 +1111,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/app/Fragment.java">
+    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/content/DialogInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="10648" max-vertical-offset="28400">
-          <caret line="757" column="26" selection-start-line="757" selection-start-column="26" selection-end-line="757" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2400">
+          <caret line="97" column="14" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java">
+    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/app/Dialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856" vertical-offset="564" max-vertical-offset="10192">
-          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="16422" max-vertical-offset="17856">
+          <caret line="1170" column="60" selection-start-line="1170" selection-start-column="4" selection-end-line="1170" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/app/DialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28158295" vertical-offset="1655" max-vertical-offset="8384">
+          <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BluetoothLeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.464286" vertical-offset="6239" max-vertical-offset="8560">
+          <caret line="421" column="36" selection-start-line="421" selection-start-column="20" selection-end-line="421" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3410#3656#0" expanded="true" />
-            <element signature="e#3654#3655#0" expanded="true" />
-            <element signature="e#3712#3961#0" expanded="true" />
-            <element signature="e#3959#3960#0" expanded="true" />
-            <element signature="e#4322#4360#0" expanded="true" />
-            <element signature="e#4906#6254#0" expanded="true" />
-            <element signature="e#6249#6250#0" expanded="true" />
-            <element signature="e#6279#6698#0" expanded="true" />
-            <element signature="e#6687#6688#0" expanded="true" />
-            <element signature="e#9850#13000#0" expanded="true" />
-            <element signature="e#12993#12994#0" expanded="true" />
-            <element signature="e#16054#17189#0" expanded="true" />
-            <element signature="e#16453#16877#0" expanded="true" />
-            <element signature="e#16858#16859#0" expanded="true" />
-            <element signature="e#16962#17180#0" expanded="true" />
-            <element signature="e#17174#17175#0" expanded="true" />
-            <element signature="e#17185#17186#0" expanded="true" />
-            <element signature="e#18009#18038#0" expanded="true" />
-            <element signature="e#20924#20925#0" expanded="true" />
-            <element signature="e#20957#20958#0" expanded="true" />
-            <element signature="e#21920#21943#0" expanded="true" />
+            <element signature="e#3057#3092#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="3216">
-          <caret line="126" column="7" selection-start-line="112" selection-start-column="6" selection-end-line="126" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1640" max-vertical-offset="3392">
+          <caret line="135" column="28" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
           <folding>
-            <element signature="e#2052#2259#0" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2371#3921#0" expanded="true" />
-            <element signature="e#3162#3568#0" expanded="true" />
-            <element signature="e#3545#3546#0" expanded="true" />
-            <element signature="e#3626#3841#0" expanded="true" />
-            <element signature="e#3818#3819#0" expanded="true" />
-            <element signature="e#3908#3909#0" expanded="true" />
+            <element signature="e#1701#2541#0" expanded="true" />
+            <element signature="e#2529#2530#0" expanded="true" />
+            <element signature="e#2697#2904#0" expanded="true" />
+            <element signature="e#2899#2900#0" expanded="true" />
+            <element signature="e#3016#4566#0" expanded="true" />
+            <element signature="e#3807#4213#0" expanded="true" />
+            <element signature="e#4190#4191#0" expanded="true" />
+            <element signature="e#4271#4486#0" expanded="true" />
+            <element signature="e#4463#4464#0" expanded="true" />
+            <element signature="e#4553#4554#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-19/android/app/DialogFragment.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9320499" vertical-offset="3546" max-vertical-offset="8384">
-          <caret line="139" column="13" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+        <state vertical-scroll-proportion="-6.4615383" vertical-offset="352" max-vertical-offset="2400">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/usbkeysearch_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3846154" vertical-offset="0" max-vertical-offset="304">
+          <caret line="11" column="147" selection-start-line="11" selection-start-column="147" selection-end-line="11" selection-end-column="147" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3188406" vertical-offset="1048" max-vertical-offset="2208">
-          <caret line="20" column="53" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="56" />
+        <state vertical-scroll-proportion="30.5" vertical-offset="1321" max-vertical-offset="2320">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1085#1307#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#2309#4153#0" expanded="true" />
-            <element signature="e#4146#4147#0" expanded="true" />
+            <element signature="e#1085#1422#0" expanded="true" />
+            <element signature="e#1403#1404#0" expanded="true" />
+            <element signature="e#1452#1727#0" expanded="true" />
+            <element signature="e#1716#1717#0" expanded="true" />
+            <element signature="e#1958#2287#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#2726#4570#0" expanded="true" />
+            <element signature="e#4563#4564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60152674" vertical-offset="5606" max-vertical-offset="10400">
+          <caret line="375" column="0" selection-start-line="356" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3492#3738#0" expanded="true" />
+            <element signature="e#3736#3737#0" expanded="true" />
+            <element signature="e#3794#4043#0" expanded="true" />
+            <element signature="e#4041#4042#0" expanded="true" />
+            <element signature="e#4404#4442#0" expanded="true" />
+            <element signature="e#4988#6336#0" expanded="true" />
+            <element signature="e#6331#6332#0" expanded="true" />
+            <element signature="e#6361#6780#0" expanded="true" />
+            <element signature="e#6769#6770#0" expanded="true" />
+            <element signature="e#9927#13077#0" expanded="true" />
+            <element signature="e#13070#13071#0" expanded="true" />
+            <element signature="e#16491#17728#0" expanded="true" />
+            <element signature="e#16951#17416#0" expanded="true" />
+            <element signature="e#17397#17398#0" expanded="true" />
+            <element signature="e#17501#17719#0" expanded="true" />
+            <element signature="e#17713#17714#0" expanded="true" />
+            <element signature="e#17724#17725#0" expanded="true" />
+            <element signature="e#18548#18577#0" expanded="true" />
+            <element signature="e#21463#21464#0" expanded="true" />
+            <element signature="e#21496#21497#0" expanded="true" />
+            <element signature="e#22459#22482#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1290,7 +1288,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>BlunoBasicDemo</last-edited>
+          <last-edited>Android|BlunoBasicDemo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1314,6 +1312,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>v4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

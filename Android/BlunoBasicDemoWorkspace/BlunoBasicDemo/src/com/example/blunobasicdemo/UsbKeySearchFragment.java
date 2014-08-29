@@ -35,18 +35,22 @@ public class UsbKeySearchFragment extends DialogFragment {
                 .setPositiveButton("Try connecting", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                            //lolol
+                        BlunoLibrary.mBluetoothLeService.connect(BlunoLibrary.BlunoNanoMacAddr);
+                        BlunoLibrary.dialogShown = 0;
                     }
-                });
+                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // Canceled.
+                        BlunoLibrary.dialogShown = 0;
+                    }
+        });
         return builder.create();
-
-
     }
 
     // George
     public void startPassiveProtectionScan() {
         if (BlunoLibrary.mConnectionState != BlunoLibrary.connectionStateEnum.isConnected) {
-
 
             mHandler.postDelayed(new Runnable() {
                 @Override

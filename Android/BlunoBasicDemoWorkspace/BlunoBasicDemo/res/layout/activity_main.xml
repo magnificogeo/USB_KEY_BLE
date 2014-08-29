@@ -30,7 +30,7 @@
             android:onClick="onProtectToggleClicked"
             android:textSize="15dp"
             />
-
+-->
     <Button
             android:id="@+id/btnfindusbkey"
             android:layout_width="285dp"
@@ -42,7 +42,6 @@
             android:shadowColor="#ff8452" android:layout_marginTop="12dp" android:textColor="#ececec"
             android:textStyle="bold"
             />
- -->
     <Button
             android:id="@+id/buttonDecrypt"
             android:layout_width="285dp"

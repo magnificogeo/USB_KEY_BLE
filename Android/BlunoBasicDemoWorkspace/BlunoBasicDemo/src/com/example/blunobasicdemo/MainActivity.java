@@ -6,6 +6,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.content.*;
+import android.location.LocationManager;
 import android.media.AudioManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -17,6 +18,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 
+import java.util.Locale;
+
 public class MainActivity extends BlunoLibrary {
 
 	public static Button buttonScan;
@@ -26,6 +29,7 @@ public class MainActivity extends BlunoLibrary {
 	private TextView serialReceivedText;
     private TextView rssi_indicator;
     static int silenced = 0;
+    public LocationManager mLocManager;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,20 +41,30 @@ public class MainActivity extends BlunoLibrary {
 		
         serialReceivedText=(TextView) findViewById(R.id.serialReveicedText);	//initial the EditText of the received data
         rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
-        rssi_indicator.setText("00 - Your USB Key is not protected");
+        rssi_indicator.setText("Your USB Key is not protected");
 
-        /*btnfindusbkey = (Button) findViewById(R.id.btnfindusbkey); // initial the button for finding USB Key
+        btnfindusbkey = (Button) findViewById(R.id.btnfindusbkey); // initial the button for finding USB Key
         btnfindusbkey.setOnClickListener(new OnClickListener() {
+
+
 
             @Override
             public void onClick(View v) {
                 //TODO Auto-generated method stub
-                Intent intent = new Intent(getApplicationContext(), UsbKeySearch.class);
-                startActivity(intent);
+                double sourceLatitude = 1.337225;
+                double sourceLongitude = 103.733751;
+                double destinationLatitude = 1.438818;
+                double destinationLongitude = 103.793489;
+
+
+                String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)", sourceLatitude, sourceLongitude, "Your Current Location", destinationLatitude, destinationLongitude, "USB Key Last Known Location");
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getBaseContext().startActivity(intent);
 
             }
 
-        }); */
+        });
 
         buttonScan = (Button) findViewById(R.id.buttonScan);					//initial the button for scanning the BLE device
         buttonScan.setOnClickListener(new OnClickListener() {
