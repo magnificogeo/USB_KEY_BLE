@@ -1,6 +1,7 @@
 package com.example.blunobasicdemo;
 
 import android.app.AlertDialog;
+import android.app.DialogFragment;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
@@ -30,11 +31,14 @@ public class MainActivity extends BlunoLibrary {
     private TextView rssi_indicator;
     static int silenced = 0;
     public LocationManager mLocManager;
+    public DialogFragment dialogFragmentObject;
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+        dialogFragmentObject = new UsbKeySearchFragment();
         onCreateProcess();														//onCreate Process by BlunoLibrary
         
         serialBegin(115200);													//set the Uart Baudrate on BLE chip to 115200
@@ -46,8 +50,6 @@ public class MainActivity extends BlunoLibrary {
         btnfindusbkey = (Button) findViewById(R.id.btnfindusbkey); // initial the button for finding USB Key
         btnfindusbkey.setOnClickListener(new OnClickListener() {
 
-
-
             @Override
             public void onClick(View v) {
                 //TODO Auto-generated method stub
@@ -56,12 +58,15 @@ public class MainActivity extends BlunoLibrary {
                 double destinationLatitude = 1.438818;
                 double destinationLongitude = 103.793489;
 
-
-                String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)", sourceLatitude, sourceLongitude, "Your Current Location", destinationLatitude, destinationLongitude, "USB Key Last Known Location");
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                getBaseContext().startActivity(intent);
-
+                if ( mConnectionState == mConnectionState.isConnected ) {
+                    Toast.makeText(MainActivity.this, "USB Key is in range",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)", sourceLatitude, sourceLongitude, "Your Current Location", destinationLatitude, destinationLongitude, "USB Key Last Known Location");
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    getBaseContext().startActivity(intent);
+                }
             }
 
         });

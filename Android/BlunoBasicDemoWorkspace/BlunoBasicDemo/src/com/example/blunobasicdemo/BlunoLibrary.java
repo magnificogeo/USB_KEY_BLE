@@ -2,14 +2,12 @@ package com.example.blunobasicdemo;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.Vibrator;
 import com.example.blunobasicdemo.R;
-
 import android.os.Handler;
 import android.os.IBinder;
 import android.annotation.SuppressLint;
@@ -64,15 +62,13 @@ public abstract  class BlunoLibrary  extends Activity{
     public static String BlunoNanoMacAddr = "D0:39:72:A0:47:7E";
 	
 //	byte[] mBaudrateBuffer={0x32,0x00,(byte) (mBaudrate & 0xFF),(byte) ((mBaudrate>>8) & 0xFF),(byte) ((mBaudrate>>16) & 0xFF),0x00};;
-	
-	
+
 	public void serialBegin(int baud){
 		mBaudrate=baud;
 		mBaudrateBuffer = "AT+CURRUART="+mBaudrate+"\r\n";
 	}
-	
-	
-	static class ViewHolder {
+
+    static class ViewHolder {
 		TextView deviceName;
 		TextView deviceAddress;
 	}
@@ -237,8 +233,8 @@ public abstract  class BlunoLibrary  extends Activity{
 		{
 //			mBluetoothLeService.disconnect();
 //            mHandler.postDelayed(mDisonnectingOverTimeRunnable, 10000);
-        	mHandler.removeCallbacks(mDisonnectingOverTimeRunnable);
-			mBluetoothLeService.close();
+        	//mHandler.removeCallbacks(mDisonnectingOverTimeRunnable);
+			//mBluetoothLeService.close();
 		}
 		mSCharacteristic=null;
 	}
@@ -357,7 +353,6 @@ public abstract  class BlunoLibrary  extends Activity{
         Toast.makeText(getApplicationContext(), "Disconnected from USB Key",
                 Toast.LENGTH_SHORT).show();
 
-
         Vibrator v = (Vibrator) mainContext.getSystemService(Context.VIBRATOR_SERVICE);
         // Vibrate for 500 milliseconds
         v.vibrate(500);
@@ -370,10 +365,10 @@ public abstract  class BlunoLibrary  extends Activity{
             e.printStackTrace();
         }
 
-
         //buttonScanOnClickProcess(); // activate scan again to look for it
         lookForUSBKey();
-
+        mBluetoothAdapter.stopLeScan(mLeScanCallback);
+        mLeDeviceListAdapter.clear();
     }
 
     // George - Look for USB Key
@@ -385,7 +380,6 @@ public abstract  class BlunoLibrary  extends Activity{
             dialogShown = 1;
         }
 
-        // Logic here
     }
 	
     void buttonScanOnClickProcess()
@@ -413,7 +407,6 @@ public abstract  class BlunoLibrary  extends Activity{
 		case isConnected:
 			mBluetoothLeService.disconnect();
             mHandler.postDelayed(mDisonnectingOverTimeRunnable, 10000);
-
 //			mBluetoothLeService.close();
 			mConnectionState=connectionStateEnum.isDisconnecting;
 			onConectionStateChange(mConnectionState);
@@ -430,7 +423,7 @@ public abstract  class BlunoLibrary  extends Activity{
     	
     }
     
-	void scanLeDevice(final boolean enable) {
+	public void scanLeDevice(final boolean enable) {
 		if (enable) {
 			// Stops scanning after a pre-defined scan period.
 
@@ -497,7 +490,6 @@ public abstract  class BlunoLibrary  extends Activity{
                         System.out.println("mLeScanCallback onLeScan cannot find USB Key ");
 
                         // George clear
-
                         mLeDeviceListAdapter.clear();
                         mLeDeviceListAdapter.notifyDataSetChanged();
 
