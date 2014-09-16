@@ -8,20 +8,28 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOError;
+import java.io.IOException;
+import java.util.Locale;
+
 /**
- * Created by george on 23/8/14.
+ * This fragment is the popup that notifies the user when the USB Key is out of range or is missing.
  */
 public class UsbKeySearchFragment extends DialogFragment {
 
     private Context mainContext= getActivity();
     private Handler mHandler= new Handler();
+    private int numRescan = 0;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -37,22 +45,44 @@ public class UsbKeySearchFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         BlunoLibrary.mBluetoothLeService.connect(BlunoLibrary.BlunoNanoMacAddr);
                         BlunoLibrary.dialogShown = 0;
-                        if ( BlunoLibrary.mConnectionState == BlunoLibrary.connectionStateEnum.isScanning) {
-                            try {
-                                Toast.makeText(mainContext, "Cannot find USB Key! Attempting to start scan", Toast.LENGTH_SHORT).show();
-                            } catch ( Exception e ) {
-                                System.out.println("Cannot find USB Key! Attempting to restart scan.");
-                            }
+                        if (BlunoLibrary.mConnectionState == BlunoLibrary.connectionStateEnum.isScanning) {
+                            // Program execution comes here when user clicks on the Try Connecting button and the USB Key is not found
                             BlunoLibrary.mBluetoothAdapter.startLeScan(activeFragmentScanCallback);
+
+                            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+                            alert.setTitle("Cannot find USB Key. See your last location?");
+                            //alert.setMessage("Message");
+                            // Set an EditText view to get user input
+                            //final EditText passwordText = new EditText(getActivity());
+                            //alert.setView(passwordText);
+                            alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+
+                                    MainActivity.btnfindusbkey.performClick();
+
+                                }
+                            });
+
+                            alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    // Canceled.
+                                }
+                            });
+
+                            alert.show();
+                            BlunoLibrary.mBluetoothAdapter.stopLeScan(activeFragmentScanCallback);
+
+
                         }
                     }
                 }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        // Canceled.
-                        BlunoLibrary.dialogShown = 0;
-                        BlunoLibrary.mBluetoothAdapter.stopLeScan(activeFragmentScanCallback);
-                    }
+            @Override
+            public void onClick(DialogInterface dialog, int whichButton) {
+                // Canceled.
+                BlunoLibrary.dialogShown = 0;
+                BlunoLibrary.mBluetoothAdapter.stopLeScan(activeFragmentScanCallback);
+            }
         });
         return builder.create();
     }
@@ -91,33 +121,20 @@ public class UsbKeySearchFragment extends DialogFragment {
             if (device.toString().equals(BlunoLibrary.BlunoNanoMacAddr)) {
 
 
-                // George - LOSS LOGIC
-                Log.d("George_debug","activeFragmentScan Callback - Device value is " + device);
-                if (device.toString().equals(BlunoLibrary.BlunoNanoMacAddr)) {
+            } else { // George - If we can't find USB Key, execute this code block
 
+                    System.out.println("activeFragmentScan onLeScan cannot find USB Key ");
+                    //numRescan++;
+                    //System.out.println("numRescan is:" + numRescan);
+                    BlunoLibrary.mBluetoothAdapter.stopLeScan(activeFragmentScanCallback);
 
-                } else { // George - If we can't find USB Key, execute this code block
+                // TODO
+                // Add another ReScan dialog after 10 and end scan after that
 
-                    ((Activity) mainContext).runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println("mLeScanCallback onLeScan cannot find USB Key ");
-
-                        }
-                    });
-                    return;
-
-                }
-                /*((Activity) mainContext).runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        System.out.println("activeFragmentScanCallback!");
-                    }
-                });*/
 
             }
 
-       }
+       };
 
     // George
 //    public void stopPassiveProtectionScan() {

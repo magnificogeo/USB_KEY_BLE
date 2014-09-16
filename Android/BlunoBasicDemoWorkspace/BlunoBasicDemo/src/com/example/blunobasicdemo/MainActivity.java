@@ -26,7 +26,7 @@ public class MainActivity extends BlunoLibrary {
 	public static Button buttonScan;
     private Button buttonProtectUSBKey;
     private Button buttonDecrypt;
-    private Button btnfindusbkey;
+    public static Button btnfindusbkey;
 	private TextView serialReceivedText;
     private TextView rssi_indicator;
     static int silenced = 0;
