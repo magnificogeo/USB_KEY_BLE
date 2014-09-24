@@ -37,14 +37,7 @@ import android.widget.Toast;
 public abstract  class BlunoLibrary  extends Activity{
 
 	private Context mainContext=this;
-    public static final long SCAN_PERIOD = 5000;
     public static int dialogShown = 0;
-
-	
-//	public BlunoLibrary(Context theContext) {
-//		
-//		mainContext=theContext;
-//	}
 
 	public abstract void onConectionStateChange(connectionStateEnum theconnectionStateEnum);
 	public abstract void onSerialReceived(String theString);
@@ -74,12 +67,11 @@ public abstract  class BlunoLibrary  extends Activity{
 	}
     private static BluetoothGattCharacteristic mSCharacteristic, mModelNumberCharacteristic, mSerialPortCharacteristic, mCommandCharacteristic;
     static BluetoothLeService mBluetoothLeService;
-    private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics =
-            new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
+    private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
 	private LeDeviceListAdapter mLeDeviceListAdapter=null;
 	public static BluetoothAdapter mBluetoothAdapter;
 	public static boolean mScanning =false;
-	AlertDialog mScanDeviceDialog;
+	public static AlertDialog mScanDeviceDialog;
     private String mDeviceName;
     private String mDeviceAddress;
 	public enum connectionStateEnum{isNull, isScanning, isToScan, isConnecting , isConnected, isDisconnecting};
@@ -132,7 +124,7 @@ public abstract  class BlunoLibrary  extends Activity{
 		// Initializes list view adapter.
 		mLeDeviceListAdapter = new LeDeviceListAdapter();
 		// Initializes and show the scan Device Dialog
-		mScanDeviceDialog = new AlertDialog.Builder(mainContext)
+		 mScanDeviceDialog = new AlertDialog.Builder(mainContext)
 		.setTitle("Select your USB Key").setAdapter(mLeDeviceListAdapter, new DialogInterface.OnClickListener() {
 
 			@Override
@@ -155,6 +147,7 @@ public abstract  class BlunoLibrary  extends Activity{
 		        {
 		        	mConnectionState=connectionStateEnum.isToScan;
 		        	onConectionStateChange(mConnectionState);
+
 		        } else{
 		        	if (mBluetoothLeService.connect(mDeviceAddress)) {
 				        Log.d(TAG, "Connect request success");
@@ -168,6 +161,7 @@ public abstract  class BlunoLibrary  extends Activity{
 			        	onConectionStateChange(mConnectionState);
 					}
 		        }
+
 			}
 		})
 		.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -233,8 +227,8 @@ public abstract  class BlunoLibrary  extends Activity{
 		{
 //			mBluetoothLeService.disconnect();
 //            mHandler.postDelayed(mDisonnectingOverTimeRunnable, 10000);
-        	//mHandler.removeCallbacks(mDisonnectingOverTimeRunnable);
-			//mBluetoothLeService.close();
+//        	mHandler.removeCallbacks(mDisonnectingOverTimeRunnable);
+//			mBluetoothLeService.close();
 		}
 		mSCharacteristic=null;
 	}
@@ -326,9 +320,19 @@ public abstract  class BlunoLibrary  extends Activity{
 						
 					}
             		else {
-            			Toast.makeText(mainContext, "Please select DFRobot devices",Toast.LENGTH_SHORT).show();
-                        mConnectionState = connectionStateEnum.isToScan;
-                        onConectionStateChange(mConnectionState);
+//            			Toast.makeText(mainContext, "Please select DFRobot devices",Toast.LENGTH_SHORT).show();
+//                        mConnectionState = connectionStateEnum.isToScan;
+//                        onConectionStateChange(mConnectionState);
+                            mBluetoothLeService.setCharacteristicNotification(mSCharacteristic, false);
+                            mSCharacteristic=mCommandCharacteristic;
+                            mSCharacteristic.setValue(mPassword);
+                            mBluetoothLeService.writeCharacteristic(mSCharacteristic);
+                            mSCharacteristic.setValue(mBaudrateBuffer);
+                            mBluetoothLeService.writeCharacteristic(mSCharacteristic);
+                            mSCharacteristic=mSerialPortCharacteristic;
+                            mBluetoothLeService.setCharacteristicNotification(mSCharacteristic, true);
+                            mConnectionState = connectionStateEnum.isConnected;
+                            onConectionStateChange(mConnectionState);
 					}
             	}
             	else if (mSCharacteristic==mSerialPortCharacteristic) {

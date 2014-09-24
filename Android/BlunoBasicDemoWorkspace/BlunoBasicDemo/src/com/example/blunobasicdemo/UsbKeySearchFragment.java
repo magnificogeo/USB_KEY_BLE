@@ -67,6 +67,7 @@ public class UsbKeySearchFragment extends DialogFragment {
                             alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int whichButton) {
                                     // Canceled.
+                                    BlunoLibrary.mScanDeviceDialog.dismiss();
                                 }
                             });
 
@@ -124,8 +125,8 @@ public class UsbKeySearchFragment extends DialogFragment {
             } else { // George - If we can't find USB Key, execute this code block
 
                     System.out.println("activeFragmentScan onLeScan cannot find USB Key ");
-                    //numRescan++;
-                    //System.out.println("numRescan is:" + numRescan);
+                    numRescan++;
+                    System.out.println("numRescan is:" + numRescan);
                     BlunoLibrary.mBluetoothAdapter.stopLeScan(activeFragmentScanCallback);
 
                 // TODO

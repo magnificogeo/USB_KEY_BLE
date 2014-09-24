@@ -186,7 +186,7 @@ public class MainActivity extends BlunoLibrary {
 			break;
 		case isToScan:
 			buttonScan.setText("Scan");
-            rssi_indicator.setText("00 - Your USB Key is not protected");
+            rssi_indicator.setText("You are not connected to your USB Key.");
 			break;
 		case isScanning:
 			buttonScan.setText("Scanning");
