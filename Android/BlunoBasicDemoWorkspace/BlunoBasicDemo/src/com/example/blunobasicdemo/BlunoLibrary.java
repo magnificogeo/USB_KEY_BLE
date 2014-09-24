@@ -354,25 +354,28 @@ public abstract  class BlunoLibrary  extends Activity{
     // George - loss logic
     void lossLogic() {
 
-        Toast.makeText(getApplicationContext(), "Disconnected from USB Key",
-                Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), "Disconnected from USB Key",
+//                Toast.LENGTH_SHORT).show();
 
-        Vibrator v = (Vibrator) mainContext.getSystemService(Context.VIBRATOR_SERVICE);
-        // Vibrate for 500 milliseconds
-        v.vibrate(500);
+            System.out.println("Disconnected from USB Key");
 
-        try {
-            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-            r.play();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            Vibrator v = (Vibrator) mainContext.getSystemService(Context.VIBRATOR_SERVICE);
+            // Vibrate for 500 milliseconds
+            v.vibrate(500);
 
-        //buttonScanOnClickProcess(); // activate scan again to look for it
-        lookForUSBKey();
-        mBluetoothAdapter.stopLeScan(mLeScanCallback);
-        mLeDeviceListAdapter.clear();
+            try {
+                Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                r.play();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            lookForUSBKey(); // opens fragment
+            mBluetoothAdapter.stopLeScan(mLeScanCallback);
+            mLeDeviceListAdapter.clear();
+
+
     }
 
     // George - Look for USB Key
@@ -485,7 +488,6 @@ public abstract  class BlunoLibrary  extends Activity{
             Log.d("George_debug","LeScanCallback - Device value is " + device);
             if (device.toString().equals(BlunoNanoMacAddr)) {
 
-
             } else { // George - If we can't find USB Key, execute this code block
 
                 ((Activity) mainContext).runOnUiThread(new Runnable() {
@@ -498,11 +500,10 @@ public abstract  class BlunoLibrary  extends Activity{
                         mLeDeviceListAdapter.notifyDataSetChanged();
 
                         //lookForUSBKey();
-                        lossLogic();
+                        lossLogic(); // restart losslogic
                     }
                 });
                 return;
-
             }
 
 			((Activity) mainContext).runOnUiThread(new Runnable() {
@@ -513,6 +514,8 @@ public abstract  class BlunoLibrary  extends Activity{
 					mLeDeviceListAdapter.notifyDataSetChanged();
 				}
 			});
+
+            //BlunoLibrary.mBluetoothLeService.connect(BlunoLibrary.BlunoNanoMacAddr);
 		}
 	};
 	

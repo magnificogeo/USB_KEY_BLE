@@ -96,31 +96,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlunoLibrary.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BlunoLibrary.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10000">
-              <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.95822453" vertical-offset="7282" max-vertical-offset="10096">
+              <caret line="517" column="14" selection-start-line="517" selection-start-column="14" selection-end-line="517" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3354#3600#0" expanded="true" />
                 <element signature="e#3598#3599#0" expanded="true" />
                 <element signature="e#3656#3905#0" expanded="true" />
                 <element signature="e#3903#3904#0" expanded="true" />
-                <element signature="e#17250#18486#0" expanded="true" />
-                <element signature="e#18482#18483#0" expanded="true" />
-                <element signature="e#19306#19335#0" expanded="true" />
+                <element signature="e#17312#18655#0" expanded="true" />
+                <element signature="e#18340#18558#0" expanded="true" />
+                <element signature="e#18552#18553#0" expanded="true" />
+                <element signature="e#18651#18652#0" expanded="true" />
+                <element signature="e#19475#19504#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsbKeySearchFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UsbKeySearchFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3550913" vertical-offset="578" max-vertical-offset="1840">
-              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-7.6153846" vertical-offset="170" max-vertical-offset="1872">
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="96" />
+              <folding>
+                <element signature="e#2515#2794#0" expanded="true" />
+                <element signature="e#2763#2764#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,15 +185,15 @@
         <option value="$PROJECT_DIR$/res/layout/usbkeysearch_layout.xml" />
         <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/BluetoothLeService.java" />
         <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java" />
         <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1674" />
+    <option name="x" value="1678" />
     <option name="y" value="22" />
-    <option name="width" value="1910" />
+    <option name="width" value="1915" />
     <option name="height" value="1052" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -566,7 +571,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1674" y="22" width="1910" height="1052" extended-state="0" />
+    <frame x="1678" y="22" width="1915" height="1052" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -583,7 +588,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32799146" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17291667" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="1949" y="599" width="1599" height="508" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17291667" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="1949" y="599" width="1599" height="508" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.046038546" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -676,9 +681,11 @@
             <element signature="e#3598#3599#0" expanded="true" />
             <element signature="e#3656#3905#0" expanded="true" />
             <element signature="e#3903#3904#0" expanded="true" />
-            <element signature="e#17250#18486#0" expanded="true" />
-            <element signature="e#18482#18483#0" expanded="true" />
-            <element signature="e#19306#19335#0" expanded="true" />
+            <element signature="e#17312#18655#0" expanded="true" />
+            <element signature="e#18340#18558#0" expanded="true" />
+            <element signature="e#18552#18553#0" expanded="true" />
+            <element signature="e#18651#18652#0" expanded="true" />
+            <element signature="e#19475#19504#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,9 +742,11 @@
             <element signature="e#3598#3599#0" expanded="true" />
             <element signature="e#3656#3905#0" expanded="true" />
             <element signature="e#3903#3904#0" expanded="true" />
-            <element signature="e#17250#18486#0" expanded="true" />
-            <element signature="e#18482#18483#0" expanded="true" />
-            <element signature="e#19306#19335#0" expanded="true" />
+            <element signature="e#17312#18655#0" expanded="true" />
+            <element signature="e#18340#18558#0" expanded="true" />
+            <element signature="e#18552#18553#0" expanded="true" />
+            <element signature="e#18651#18652#0" expanded="true" />
+            <element signature="e#19475#19504#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -794,9 +803,11 @@
             <element signature="e#3598#3599#0" expanded="true" />
             <element signature="e#3656#3905#0" expanded="true" />
             <element signature="e#3903#3904#0" expanded="true" />
-            <element signature="e#17250#18486#0" expanded="true" />
-            <element signature="e#18482#18483#0" expanded="true" />
-            <element signature="e#19306#19335#0" expanded="true" />
+            <element signature="e#17312#18655#0" expanded="true" />
+            <element signature="e#18340#18558#0" expanded="true" />
+            <element signature="e#18552#18553#0" expanded="true" />
+            <element signature="e#18651#18652#0" expanded="true" />
+            <element signature="e#19475#19504#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -875,6 +886,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16519824" vertical-offset="0" max-vertical-offset="43260">
           <caret line="54" column="74" selection-start-line="54" selection-start-column="74" selection-end-line="54" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -910,6 +922,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33259913" vertical-offset="283" max-vertical-offset="17985">
           <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1021,6 +1034,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33280757" vertical-offset="3501" max-vertical-offset="6576">
           <caret line="264" column="0" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,6 +1077,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6153846" vertical-offset="170" max-vertical-offset="1872">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="96" />
+          <folding>
+            <element signature="e#2515#2794#0" expanded="true" />
+            <element signature="e#2763#2764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.307693" vertical-offset="2158" max-vertical-offset="3152">
@@ -1071,26 +1098,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/BlunoLibrary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2000" max-vertical-offset="10000">
-          <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.95822453" vertical-offset="7282" max-vertical-offset="10096">
+          <caret line="517" column="14" selection-start-line="517" selection-start-column="14" selection-end-line="517" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3354#3600#0" expanded="true" />
             <element signature="e#3598#3599#0" expanded="true" />
             <element signature="e#3656#3905#0" expanded="true" />
             <element signature="e#3903#3904#0" expanded="true" />
-            <element signature="e#17250#18486#0" expanded="true" />
-            <element signature="e#18482#18483#0" expanded="true" />
-            <element signature="e#19306#19335#0" expanded="true" />
+            <element signature="e#17312#18655#0" expanded="true" />
+            <element signature="e#18340#18558#0" expanded="true" />
+            <element signature="e#18552#18553#0" expanded="true" />
+            <element signature="e#18651#18652#0" expanded="true" />
+            <element signature="e#19475#19504#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/blunobasicdemo/UsbKeySearchFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3550913" vertical-offset="578" max-vertical-offset="1840">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
