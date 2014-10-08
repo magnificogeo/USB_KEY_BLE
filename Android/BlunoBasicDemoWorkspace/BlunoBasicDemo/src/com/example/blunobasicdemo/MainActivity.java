@@ -17,6 +17,7 @@ import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.*;
 
 import java.util.Locale;
@@ -33,6 +34,7 @@ public class MainActivity extends BlunoLibrary {
     public LocationManager mLocManager;
     public DialogFragment dialogFragmentObject;
 
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +43,10 @@ public class MainActivity extends BlunoLibrary {
         dialogFragmentObject = new UsbKeySearchFragment();
         onCreateProcess();														//onCreate Process by BlunoLibrary
         
-        serialBegin(115200);													//set the Uart Baudrate on BLE chip to 115200
-		
+        serialBegin(9600);													//set the Uart Baudrate on BLE chip to 115200
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         serialReceivedText=(TextView) findViewById(R.id.serialReveicedText);	//initial the EditText of the received data
         rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
         rssi_indicator.setText("Your USB Key is not protected");
@@ -180,6 +184,8 @@ public class MainActivity extends BlunoLibrary {
 		case isConnected:
 			buttonScan.setText("Connected");
             rssi_indicator.setText("You are now connected to your USB Key.");
+            // Send connected to Ian
+            serialSend("usb_key_connected\r\n");
 			break;
 		case isConnecting:
 			buttonScan.setText("Connecting");

@@ -7,6 +7,7 @@ import android.media.RingtoneManager;
 import android.media.ToneGenerator;
 import android.net.Uri;
 import android.os.Vibrator;
+import android.widget.EditText;
 import com.example.blunobasicdemo.R;
 import android.os.Handler;
 import android.os.IBinder;
@@ -41,19 +42,19 @@ public abstract class BlunoLibrary  extends Activity{
 
 	public abstract void onConectionStateChange(connectionStateEnum theconnectionStateEnum);
 	public abstract void onSerialReceived(String theString);
-	public void serialSend(String theString){
+	public static void serialSend(String theString){
 		if (mConnectionState == connectionStateEnum.isConnected) {
 			mSCharacteristic.setValue(theString);
 			mBluetoothLeService.writeCharacteristic(mSCharacteristic);
 		}
 	}
 	
-	private int mBaudrate=115200;	//set the default baud rate to 115200
+	private int mBaudrate=9600;	//set the default baud rate to 115200
 	private String mPassword="AT+PASSWOR=DFRobot\r\n";
 	private String mBaudrateBuffer = "AT+CURRUART="+mBaudrate+"\r\n";
     // George - Bluno Nano hardware MAC address
     public static String BlunoNanoMacAddr = "D0:39:72:A0:47:7E";
-	
+
 //	byte[] mBaudrateBuffer={0x32,0x00,(byte) (mBaudrate & 0xFF),(byte) ((mBaudrate>>8) & 0xFF),(byte) ((mBaudrate>>16) & 0xFF),0x00};;
 
 	public void serialBegin(int baud){
@@ -342,17 +343,39 @@ public abstract class BlunoLibrary  extends Activity{
 				}
             	
             
-            	System.out.println("displayData "+intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
-            	
+            	//System.out.println("displayData "+intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
+
+                /***
+                 * This is where I do something to the commands received from USB Key
+                 */
+            	if (intent.getStringExtra(BluetoothLeService.EXTRA_DATA).toString().equals("1")) {
+
+                    // This block writes back a value on Serial
+                    mSCharacteristic.setValue("Heartbeat");
+                    mBluetoothLeService.writeCharacteristic(mSCharacteristic);
+
+                }
+
+                if (intent.getStringExtra(BluetoothLeService.EXTRA_DATA).toString().equals("2")) {
+
+                    PasskeySet Passkeyset_dialog = new PasskeySet();
+
+                    Passkeyset_dialog.show(getFragmentManager(), "Passkey_set_TAG");
+
+                }
+
 //            	mPlainProtocol.mReceivedframe.append(intent.getStringExtra(BluetoothLeService.EXTRA_DATA)) ;
 //            	System.out.print("mPlainProtocol.mReceivedframe:");
 //            	System.out.println(mPlainProtocol.mReceivedframe.toString());
 
             	
             }
+
+
         }
     };
 
+    // George - loss logic
     // George - loss logic
     void lossLogic() {
 
