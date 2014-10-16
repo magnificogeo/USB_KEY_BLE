@@ -99,10 +99,12 @@ public abstract class BlunoLibrary  extends Activity{
 
 		@Override
 		public void run() {
+            dialogShown = 0; // reset back to 0
         	if(mConnectionState==connectionStateEnum.isDisconnecting)
 			mConnectionState=connectionStateEnum.isToScan;
 			onConectionStateChange(mConnectionState);
 			mBluetoothLeService.close();
+
 		}};
     
 	public static final String SerialPortUUID="0000dfb1-0000-1000-8000-00805f9b34fb";
@@ -181,9 +183,6 @@ public abstract class BlunoLibrary  extends Activity{
         }).create();
 		
     }
-    
-    
-    
     public void onResumeProcess() {
     	System.out.println("BlUNOActivity onResume");
 		// Ensures Bluetooth is enabled on the device. If Bluetooth is not
@@ -385,7 +384,6 @@ public abstract class BlunoLibrary  extends Activity{
 
           System.out.println("Disconnected from USB Key");
 
-
           lookForUSBKey(); // opens fragment
 
           Vibrator v = (Vibrator) mainContext.getSystemService(Context.VIBRATOR_SERVICE);
@@ -438,8 +436,11 @@ public abstract class BlunoLibrary  extends Activity{
 
 			break;
 		case isConnected:
+            dialogShown = 1; // prevent the loss logic dialog from popping up
 			mBluetoothLeService.disconnect();
+
             mHandler.postDelayed(mDisonnectingOverTimeRunnable, 10000);
+
 //			mBluetoothLeService.close();
 			mConnectionState=connectionStateEnum.isDisconnecting;
 			onConectionStateChange(mConnectionState);
@@ -526,20 +527,24 @@ public abstract class BlunoLibrary  extends Activity{
                         mLeDeviceListAdapter.notifyDataSetChanged();
 
                         //lookForUSBKey();
-                        lossLogic(); // restart losslogic
+                        if (BlunoLibrary.mConnectionState != connectionStateEnum.isScanning) {
+                            lossLogic(); // restart losslogic
+                        }
                     }
                 });
                 return;
+
+
             }
 
-			((Activity) mainContext).runOnUiThread(new Runnable() {
-				@Override
-				public void run() {
-					System.out.println("mLeScanCallback onLeScan run ");
-					mLeDeviceListAdapter.addDevice(device);
-					mLeDeviceListAdapter.notifyDataSetChanged();
-				}
-			});
+            ((Activity) mainContext).runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("mLeScanCallback onLeScan run ");
+                    mLeDeviceListAdapter.addDevice(device);
+                    mLeDeviceListAdapter.notifyDataSetChanged();
+                }
+            });
 
             //BlunoLibrary.mBluetoothLeService.connect(BlunoLibrary.BlunoNanoMacAddr);
 		}
@@ -673,5 +678,21 @@ public abstract class BlunoLibrary  extends Activity{
 
 			return view;
 		}
+
+        public int ifkUSBKey_exist() {
+
+            int numItems = this.getCount();
+            BluetoothDevice deviceItem;
+            for(int counter = 0; counter < numItems; counter++) {
+                deviceItem = mLeDevices.get(counter);
+                Log.d("George_debug", "Device Item: " + deviceItem.getName());
+
+                if (deviceItem.getName().equals("USB_KEY")) {
+                    return 1;
+                }
+            }
+
+            return 0;
+        }
 	}
 }

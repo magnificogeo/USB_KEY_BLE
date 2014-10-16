@@ -2,18 +2,13 @@ package com.example.blunobasicdemo;
 
 import android.app.AlertDialog;
 import android.app.DialogFragment;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothGatt;
-import android.bluetooth.BluetoothGattCallback;
 import android.content.*;
 import android.location.LocationManager;
 import android.media.AudioManager;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Vibrator;
+import android.text.method.MovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,7 +20,6 @@ import java.util.Locale;
 public class MainActivity extends BlunoLibrary {
 
 	public static Button buttonScan;
-    private Button buttonProtectUSBKey;
     private Button buttonDecrypt;
     public static Button btnfindusbkey;
 	private TextView serialReceivedText;
@@ -38,16 +32,18 @@ public class MainActivity extends BlunoLibrary {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
         dialogFragmentObject = new UsbKeySearchFragment();
         onCreateProcess();														//onCreate Process by BlunoLibrary
-        
-        serialBegin(9600);													//set the Uart Baudrate on BLE chip to 115200
 
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        serialBegin(9600);													//set the UART Baudrate on BLE chip to 9600
 
-        serialReceivedText=(TextView) findViewById(R.id.serialReveicedText);	//initial the EditText of the received data
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); // Keep app window alive!
+
+        serialReceivedText = (TextView) findViewById(R.id.serialReceivedText);	//initial the EditText of the received data
+        serialReceivedText.setMovementMethod(new ScrollingMovementMethod());
         rssi_indicator = (TextView) findViewById(R.id.rssi_indicator);
         rssi_indicator.setText("Your USB Key is not protected");
 
@@ -148,6 +144,7 @@ public class MainActivity extends BlunoLibrary {
 //        }
 //
 //    }
+
 
 	protected void onResume(){
 		super.onResume();

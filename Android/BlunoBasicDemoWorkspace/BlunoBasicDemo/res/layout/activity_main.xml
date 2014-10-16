@@ -59,8 +59,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textOn="Notifications Off"
-            android:textOff="Notifications On"
+            android:textOn="Turn Notifications Off"
+            android:textOff="Turn Notifications On"
             android:onClick="onToggleClicked"/>
 
     <TextView
@@ -90,14 +90,16 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/serialReveicedText"
+        android:id="@+id/serialReceivedText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editText2"
         android:layout_alignRight="@+id/editText2"
         android:layout_below="@+id/editText2"
         android:ems="10"
-        android:textSize="10sp" />
+        android:textSize="10sp"
+        android:maxLines = "20"
+        android:scrollbars = "vertical"/>
 
   <!--  <Button
         android:id="@+id/buttonSerialSend"
