@@ -3,7 +3,7 @@ package com.example.blunobasicdemo;
 import android.app.AlertDialog;
 import android.app.DialogFragment;
 import android.content.*;
-import android.location.LocationManager;
+import android.location.*;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.*;
 
+import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends BlunoLibrary {
@@ -25,10 +26,16 @@ public class MainActivity extends BlunoLibrary {
 	private TextView serialReceivedText;
     private TextView rssi_indicator;
     static int silenced = 0;
-    public LocationManager mLocManager;
+    Geocoder geocoder;
+    String bestProvider;
+    List<Address> user = null;
+
     public DialogFragment dialogFragmentObject;
 
-
+    public static double sourceLatitude = 1.337225;
+    public static double sourceLongitude = 103.733751;
+    public static double destinationLatitude = 1.299360;
+    public static double destinationLongitude = 103.771132;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +60,13 @@ public class MainActivity extends BlunoLibrary {
             @Override
             public void onClick(View v) {
                 //TODO Auto-generated method stub
-                double sourceLatitude = 1.337225;
-                double sourceLongitude = 103.733751;
-                double destinationLatitude = 1.438818;
-                double destinationLongitude = 103.793489;
 
                 if ( mConnectionState == mConnectionState.isConnected ) {
                     Toast.makeText(MainActivity.this, "USB Key is in range",
                             Toast.LENGTH_SHORT).show();
                 } else {
-                    String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)", sourceLatitude, sourceLongitude, "Your Current Location", destinationLatitude, destinationLongitude, "USB Key Last Known Location");
+                    //String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)", MainActivity.sourceLatitude, MainActivity.sourceLongitude, "Your Current Location", MainActivity.destinationLatitude, MainActivity.destinationLongitude, "USB Key Last Known Location");
+                    String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?q=%f,%f (%s)", MainActivity.destinationLatitude, MainActivity.destinationLongitude, "USB Key Last Known Location");
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     getBaseContext().startActivity(intent);
@@ -183,6 +187,28 @@ public class MainActivity extends BlunoLibrary {
             rssi_indicator.setText("You are now connected to your USB Key.");
             // Send connected to Ian
             serialSend("usb_key_connected\r\n");
+
+            LocationManager lm = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+            Criteria criteria = new Criteria();
+            bestProvider = lm.getBestProvider(criteria, false);
+            Location location = lm.getLastKnownLocation(bestProvider);
+
+            if (location == null){
+                //Toast.makeText(this,"Location Not found",Toast.LENGTH_LONG).show();
+            }else{
+                geocoder = new Geocoder(this);
+                try {
+                    user = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                    MainActivity.destinationLatitude=(double)user.get(0).getLatitude();
+                    MainActivity.destinationLongitude=(double)user.get(0).getLongitude();
+                    Log.d("George_debug"," DDD lat: " +MainActivity.destinationLatitude+",  longitude: "+MainActivity.destinationLongitude);
+
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
 			break;
 		case isConnecting:
 			buttonScan.setText("Connecting");

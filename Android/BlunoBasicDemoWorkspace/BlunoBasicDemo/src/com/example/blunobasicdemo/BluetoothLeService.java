@@ -289,11 +289,6 @@ public class BluetoothLeService extends Service {
         public void onCharacteristicChanged(BluetoothGatt gatt,
                                             BluetoothGattCharacteristic characteristic) {
         	System.out.println("onCharacteristicChanged  "+new String(characteristic.getValue()));
-
-            /****
-             * This is the part where I receive Ian's control code from his
-             */
-
             broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
         }
     };

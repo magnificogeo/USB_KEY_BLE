@@ -346,6 +346,7 @@ public abstract class BlunoLibrary  extends Activity{
 
                 /***
                  * This is where I do something to the commands received from USB Key
+                 * received from Ian's part.
                  */
             	if (intent.getStringExtra(BluetoothLeService.EXTRA_DATA).toString().equals("1")) {
 
@@ -374,7 +375,6 @@ public abstract class BlunoLibrary  extends Activity{
         }
     };
 
-    // George - loss logic
     // George - loss logic
     void lossLogic() {
 
